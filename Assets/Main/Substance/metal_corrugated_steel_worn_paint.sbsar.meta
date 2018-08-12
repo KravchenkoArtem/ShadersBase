@@ -1,0 +1,104 @@
+fileFormatVersion: 2
+guid: b4b9ff7ba3f064043b569d20d95c8b83
+ScriptedImporter:
+  fileIDToRecycleName:
+    100000: metal_corrugated_steel_worn_paint/metal_corrugated_steel_worn_paint
+    400000: metal_corrugated_steel_worn_paint/metal_corrugated_steel_worn_paint/Transform
+    2100000: mat.Corrugated Steel with Worn Paint
+    2300000: metal_corrugated_steel_worn_paint/metal_corrugated_steel_worn_paint/MeshRenderer
+    2800000: Corrugated Steel with Worn Paint_Base Color
+    2800002: Corrugated Steel with Worn Paint_Normal
+    2800004: Corrugated Steel with Worn Paint_Metallic
+    2800006: Corrugated Steel with Worn Paint_Ambient Occlusion
+    2800008: Corrugated Steel with Worn Paint_Height
+    3300000: metal_corrugated_steel_worn_paint/metal_corrugated_steel_worn_paint/MeshFilter
+    11400000: sbsar
+    11400002: graph0
+    13500000: metal_corrugated_steel_worn_paint/metal_corrugated_steel_worn_paint/SphereCollider
+    100100000: metal_corrugated_steel_worn_paint
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 232528478, guid: 43a8bbf65be290d44ba52b94476242b9, type: 3}
+  mGraphInstanceData:
+  - graphLabel: Corrugated Steel with Worn Paint
+    graphDescIndex: 0
+    generateAllOutputs: 0
+    generateMipMaps: 1
+    preset: " <sbspreset pkgurl=\"pkg://metal_corrugated_steel_worn_paint\" label=\"\"
+      >\n  <presetinput identifier=\"hue_shift\" uid=\"4024645447\" type=\"0\" value=\"1\"
+      />\n  <presetinput identifier=\"saturation\" uid=\"4024645449\" type=\"0\" value=\"0.562\"
+      />\n  <presetinput identifier=\"luminosity\" uid=\"4024645542\" type=\"0\" value=\"0.607\"
+      />\n  <presetinput identifier=\"contrast\" uid=\"4024645629\" type=\"0\" value=\"0.26\"
+      />\n  <presetinput identifier=\"roughness\" uid=\"4010751368\" type=\"0\" value=\"0.617\"
+      />\n  <presetinput identifier=\"height_range\" uid=\"4024645998\" type=\"0\"
+      value=\"0\" />\n  <presetinput identifier=\"height_position\" uid=\"4024645979\"
+      type=\"0\" value=\"0\" />\n </sbspreset>\n"
+    shaderName: Standard
+    outputNames: Base Color,Normal,Metallic,Ambient Occlusion,Height
+    texturePackingList:
+    - outputName: Diffuse
+      alphaSource: Diffuse
+    - outputName: Base Color
+      alphaSource: Base Color
+    - outputName: Normal
+      alphaSource: Normal
+    - outputName: Specular
+      alphaSource: Specular
+    - outputName: Glossiness
+      alphaSource: Glossiness
+    - outputName: Roughness
+      alphaSource: Roughness
+    - outputName: Metallic
+      alphaSource: Smoothness
+    - outputName: Ambient Occlusion
+      alphaSource: Ambient Occlusion
+    - outputName: Height
+      alphaSource: Height
+    colorSpaceList:
+    - outputName: Diffuse
+      bLinear: 0
+    - outputName: Base Color
+      bLinear: 0
+    - outputName: Normal
+      bLinear: 1
+    - outputName: Specular
+      bLinear: 0
+    - outputName: Glossiness
+      bLinear: 1
+    - outputName: Roughness
+      bLinear: 1
+    - outputName: Metallic
+      bLinear: 1
+    - outputName: Ambient Occlusion
+      bLinear: 1
+    - outputName: Height
+      bLinear: 1
+    inputTextureMap: []
+    targetSettingList:
+    - label: Default
+      bOverride: 0
+      bLockRatio: 1
+      bHighQuality: 0
+      textureWidth: 256
+      textureHeight: 256
+      textureFormat: 0
+      loadBehavior: 0
+    - label: Standalone
+      bOverride: 0
+      bLockRatio: 1
+      bHighQuality: 0
+      textureWidth: 256
+      textureHeight: 256
+      textureFormat: 0
+      loadBehavior: 0
+    - label: iPhone
+      bOverride: 0
+      bLockRatio: 1
+      bHighQuality: 0
+      textureWidth: 256
+      textureHeight: 256
+      textureFormat: 0
+      loadBehavior: 0
+    material: {fileID: 2100000, guid: b4b9ff7ba3f064043b569d20d95c8b83, type: 3}

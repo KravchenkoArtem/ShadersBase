@@ -1,0 +1,97 @@
+fileFormatVersion: 2
+guid: 1dded197372992e4b89e1f2f23952035
+ScriptedImporter:
+  fileIDToRecycleName:
+    100000: metal_aluminium_directional/metal_aluminium_directional
+    400000: metal_aluminium_directional/metal_aluminium_directional/Transform
+    2100000: mat.Aluminum
+    2300000: metal_aluminium_directional/metal_aluminium_directional/MeshRenderer
+    2800000: Aluminum_Base Color
+    2800002: Aluminum_Normal
+    2800004: Aluminum_Metallic
+    2800006: Aluminum_Ambient Occlusion
+    2800008: Aluminum_Height
+    3300000: metal_aluminium_directional/metal_aluminium_directional/MeshFilter
+    11400000: sbsar
+    11400002: graph0
+    13500000: metal_aluminium_directional/metal_aluminium_directional/SphereCollider
+    100100000: metal_aluminium_directional
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 232528478, guid: 43a8bbf65be290d44ba52b94476242b9, type: 3}
+  mGraphInstanceData:
+  - graphLabel: Aluminum
+    graphDescIndex: 0
+    generateAllOutputs: 0
+    generateMipMaps: 1
+    preset: " <sbspreset pkgurl=\"pkg://metal_aluminium_directional\" label=\"\" >\n
+      </sbspreset>\n"
+    shaderName: Standard
+    outputNames: Base Color,Normal,Metallic,Ambient Occlusion,Height
+    texturePackingList:
+    - outputName: Diffuse
+      alphaSource: Diffuse
+    - outputName: Base Color
+      alphaSource: Base Color
+    - outputName: Normal
+      alphaSource: Normal
+    - outputName: Specular
+      alphaSource: Specular
+    - outputName: Glossiness
+      alphaSource: Glossiness
+    - outputName: Roughness
+      alphaSource: Roughness
+    - outputName: Metallic
+      alphaSource: Smoothness
+    - outputName: Ambient Occlusion
+      alphaSource: Ambient Occlusion
+    - outputName: Height
+      alphaSource: Height
+    colorSpaceList:
+    - outputName: Diffuse
+      bLinear: 0
+    - outputName: Base Color
+      bLinear: 0
+    - outputName: Normal
+      bLinear: 1
+    - outputName: Specular
+      bLinear: 0
+    - outputName: Glossiness
+      bLinear: 1
+    - outputName: Roughness
+      bLinear: 1
+    - outputName: Metallic
+      bLinear: 1
+    - outputName: Ambient Occlusion
+      bLinear: 1
+    - outputName: Height
+      bLinear: 1
+    inputTextureMap: []
+    targetSettingList:
+    - label: Default
+      bOverride: 0
+      bLockRatio: 1
+      bHighQuality: 0
+      textureWidth: 256
+      textureHeight: 256
+      textureFormat: 0
+      loadBehavior: 0
+    - label: Standalone
+      bOverride: 0
+      bLockRatio: 1
+      bHighQuality: 0
+      textureWidth: 256
+      textureHeight: 256
+      textureFormat: 0
+      loadBehavior: 0
+    - label: iPhone
+      bOverride: 0
+      bLockRatio: 1
+      bHighQuality: 0
+      textureWidth: 256
+      textureHeight: 256
+      textureFormat: 0
+      loadBehavior: 0
+    material: {instanceID: 0}

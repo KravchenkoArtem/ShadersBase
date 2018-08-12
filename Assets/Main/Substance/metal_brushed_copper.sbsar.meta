@@ -1,0 +1,96 @@
+fileFormatVersion: 2
+guid: 11f30d04b3b46a24a8b2db0e036947d4
+ScriptedImporter:
+  fileIDToRecycleName:
+    100000: metal_brushed_copper/metal_brushed_copper
+    400000: metal_brushed_copper/metal_brushed_copper/Transform
+    2100000: mat.Brushed Copper
+    2300000: metal_brushed_copper/metal_brushed_copper/MeshRenderer
+    2800000: Brushed Copper_Base Color
+    2800002: Brushed Copper_Normal
+    2800004: Brushed Copper_Metallic
+    2800006: Brushed Copper_Ambient Occlusion
+    2800008: Brushed Copper_Height
+    3300000: metal_brushed_copper/metal_brushed_copper/MeshFilter
+    11400000: sbsar
+    11400002: graph0
+    13500000: metal_brushed_copper/metal_brushed_copper/SphereCollider
+    100100000: metal_brushed_copper
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 232528478, guid: 43a8bbf65be290d44ba52b94476242b9, type: 3}
+  mGraphInstanceData:
+  - graphLabel: Brushed Copper
+    graphDescIndex: 0
+    generateAllOutputs: 0
+    generateMipMaps: 1
+    preset: " <sbspreset pkgurl=\"pkg://metal_brushed_copper\" label=\"\" >\n </sbspreset>\n"
+    shaderName: Standard
+    outputNames: Base Color,Normal,Metallic,Ambient Occlusion,Height
+    texturePackingList:
+    - outputName: Diffuse
+      alphaSource: Diffuse
+    - outputName: Base Color
+      alphaSource: Base Color
+    - outputName: Normal
+      alphaSource: Normal
+    - outputName: Specular
+      alphaSource: Specular
+    - outputName: Glossiness
+      alphaSource: Glossiness
+    - outputName: Roughness
+      alphaSource: Roughness
+    - outputName: Metallic
+      alphaSource: Smoothness
+    - outputName: Ambient Occlusion
+      alphaSource: Ambient Occlusion
+    - outputName: Height
+      alphaSource: Height
+    colorSpaceList:
+    - outputName: Diffuse
+      bLinear: 0
+    - outputName: Base Color
+      bLinear: 0
+    - outputName: Normal
+      bLinear: 1
+    - outputName: Specular
+      bLinear: 0
+    - outputName: Glossiness
+      bLinear: 1
+    - outputName: Roughness
+      bLinear: 1
+    - outputName: Metallic
+      bLinear: 1
+    - outputName: Ambient Occlusion
+      bLinear: 1
+    - outputName: Height
+      bLinear: 1
+    inputTextureMap: []
+    targetSettingList:
+    - label: Default
+      bOverride: 0
+      bLockRatio: 1
+      bHighQuality: 0
+      textureWidth: 256
+      textureHeight: 256
+      textureFormat: 0
+      loadBehavior: 0
+    - label: Standalone
+      bOverride: 0
+      bLockRatio: 1
+      bHighQuality: 0
+      textureWidth: 256
+      textureHeight: 256
+      textureFormat: 0
+      loadBehavior: 0
+    - label: iPhone
+      bOverride: 0
+      bLockRatio: 1
+      bHighQuality: 0
+      textureWidth: 256
+      textureHeight: 256
+      textureFormat: 0
+      loadBehavior: 0
+    material: {instanceID: 0}
