@@ -1,10 +1,7 @@
-﻿Shader "Custom/Unlit/BasicVF"
+﻿Shader "Custom/VF/ColourVF"
 {
-	
 	SubShader
 	{
-		Tags { "RenderType"="Opaque" }
-		LOD 100
 
 		Pass
 		{
@@ -22,7 +19,7 @@
 			struct v2f
 			{
 				float4 vertex : SV_POSITION;
-				float color : COLOR;
+				float4 color : COLOR;
 			};
 
 			
@@ -35,8 +32,7 @@
 			
 			fixed4 frag (v2f i) : SV_Target
 			{
-				// apply fog
-				UNITY_APPLY_FOG(i.fogCoord, col);
+				fixed4 col = fixed4(0,0.4f,0,1);
 				return col;
 			}
 			ENDCG
