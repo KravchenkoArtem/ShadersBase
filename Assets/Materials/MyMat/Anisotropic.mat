@@ -4,15 +4,15 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Anisotropic
-  m_Shader: {fileID: 4800000, guid: 4ad3792e545075f49a840aa1082c6fb0, type: 3}
+  m_Shader: {fileID: 4800000, guid: 04b7b85800b89ec429186c5f7156f51f, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -28,6 +28,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BumpTexture:
         m_Texture: {fileID: 2800000, guid: 4b45ee0169bb3ed4dad4923cbaf7cf1e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CubeMapTexture:
+        m_Texture: {fileID: 8900000, guid: ce34578be851f4d4a952e682362548cc, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CubeMapTexure:
+        m_Texture: {fileID: 8900000, guid: ce34578be851f4d4a952e682362548cc, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -47,7 +55,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 9a9a3d4f4abd5de43b5724f72807642a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 34f1d6efa3a2d244eb469053091d90ab, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -76,6 +84,7 @@ Material:
     - _Cutoff: 0
     - _DetailNormalMapScale: 1
     - _DstBlend: 3
+    - _FresnelStrength: 0.7
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -83,6 +92,7 @@ Material:
     - _Mode: 0
     - _NormalStrength: 1
     - _OcclusionStrength: 1
+    - _Opacity: 0.698
     - _OscilateRange: 50
     - _Parallax: 0.02
     - _Scale: 2
@@ -94,7 +104,9 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
+    - _AlbedoColor: {r: 0.63456744, g: 0.8477579, b: 0.8679245, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FresnelColor: {r: 1, g: 0, b: 0, a: 1}
     - _TileSpeed: {r: 0.2, g: 0.1, b: 0, a: 0}
     - _TileVec: {r: 0.2, g: 0.2, b: 0, a: 0}

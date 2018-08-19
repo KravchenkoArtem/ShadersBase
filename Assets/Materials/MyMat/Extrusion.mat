@@ -4,7 +4,7 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Extrusion
   m_Shader: {fileID: 4800000, guid: 43f09e534ca08bd47b6e3c2c79bf409f, type: 3}
