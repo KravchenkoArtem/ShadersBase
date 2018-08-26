@@ -7,60 +7,65 @@ Shader "Custom/IceShader" {
 		_CubeMapTexture ("CubeMap Texure", Cube) = "white" {}
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
 		_NormalTexure ("Normal Texure", 2D) = "bump" {}
-		_NormalStrength ("Normal Strength", Range(0.01, 2.0)) = 1.0
+		_NormalStrength ("Normal Strength", Range(0.01, 20.0)) = 1.0
 		_Opacity ("Opacity", Range(0.0, 1.0)) = 1.0
 	}
 	SubShader {
 		Tags {"RenderType"="Transparent" "Queue"="Transparent"}
-		LOD 200
+		GrabPass{ }
 
-		Pass {
-			ZWrite On
-			ColorMask 0
-
+		Pass
+		{
 			CGPROGRAM
-			#pragma vertex vert;
-			#pragma fragment frag;  
-
+			#pragma vertex vert
+			#pragma fragment frag
+			
 			#include "UnityCG.cginc"
 
-			struct vertexInput {
+			struct appdata
+			{
 				float4 vertex : POSITION;
-				float3 normal : NORMAL;
-				float2 uv : TEXCOORD3;
+				float2 uv : TEXCOORD0;
 			};
 
-			struct vertexOutput {
-				float4 pos : SV_POSITION;
-				float3 normalDir : TEXCOORD0;
-				float3 viewDir : TEXCOORD1;
-				float2 uv : TEXCOORD3;
+			struct v2f
+			{
+				float2 uv : TEXCOORD0;
+				float4 uvgrab : TEXCOORD1;
+				float2 uvbump : TEXCOORD2;
+				float4 vertex : SV_POSITION;
 			};
 
-			half _NormalStrength;
+			sampler2D _GrabTexture;
+			//float4 _GrabTexture_TexelSize; // Размер пикселя
+			sampler2D _MainTex;
+			float4 _MainTex_ST;
 			sampler2D _NormalTexure;
 			float4 _NormalTexure_ST;
+			half _NormalStrength;
 
-			vertexOutput vert (vertexInput input) {
-				vertexOutput output;
- 
-            	float4x4 modelMatrix = unity_ObjectToWorld;
-            	float4x4 modelMatrixInverse = unity_WorldToObject; 
- 
-            	output.viewDir = mul(modelMatrix, input.vertex).xyz - _WorldSpaceCameraPos;
-            	output.normalDir = normalize( mul(float4(input.normal, 0.0), modelMatrixInverse).xyz);
-            	output.uv = TRANSFORM_TEX(input.uv, _NormalTexure);
-            	output.pos = UnityObjectToClipPos(input.vertex);
-            	return output;
-			}
-
-			float4 frag(vertexOutput input) : COLOR
+			v2f vert (appdata v)
 			{
-				float3 normal = UnpackNormal(tex2D(_NormalTexure, input.uv)) * (fixed3 (0,0,1), - _NormalStrength);
-				
-				float4 refractedDir = refract
+				v2f o;
+				o.vertex = UnityObjectToClipPos(v.vertex);
+				o.uvgrab.xy = (float2(o.vertex.x, -o.vertex.y) + o.vertex.w) * 0.5;
+				o.uvgrab.zw = o.vertex.zw;
+				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+				o.uvbump = TRANSFORM_TEX(v.uv, _NormalTexure);
+				return o;
 			}
+			
+			fixed4 frag (v2f i) : SV_Target
+			{
+				half2 bump = UnpackNormal(tex2D(_NormalTexure, i.uvbump)).rg;
+				float2 offset = bump * _NormalStrength /** _GrabTexture_TexelSize.xy*/;
+				i.uvgrab.xy = offset * i.uvgrab.z + i.uvgrab.xy;
 
+				fixed4 col = tex2Dproj(_GrabTexture, UNITY_PROJ_COORD(i.uvgrab));
+				fixed4 tint = tex2D(_MainTex, i.uv);
+				col *= tint;
+				return col;
+			}
 			ENDCG
 		}
 
@@ -70,8 +75,8 @@ Shader "Custom/IceShader" {
 
 		sampler2D _MainTex;
 		samplerCUBE  _CubeMapTexture;
-		//sampler2D _NormalTexure;
-		//half _NormalStrength;
+		sampler2D _NormalTexure;
+		half _NormalStrength;
 		half _FresnelStrength;
 		half _Opacity;
 
@@ -85,7 +90,7 @@ Shader "Custom/IceShader" {
 		fixed4 _AlbedoColor;
 
 		void surf (Input IN, inout SurfaceOutput o) {
-			half fresnel = 1.0 - saturate(dot(normalize(IN.viewDir), o.Normal));
+			half fresnel = 1.0 - saturate(dot(normalize(IN.viewDir), o.Normal)); //dot(normalize(IN.viewDir),o.Normal); 
 			fixed4 mainTex = tex2D(_MainTex, IN.uv_MainTex);
 			/*float3 normalTex = UnpackNormal(tex2D(_NormalTexure, IN.uv_MainTex));
 		    o.Normal = normalTex * (fixed3 (0,0,1), - _NormalStrength);*/

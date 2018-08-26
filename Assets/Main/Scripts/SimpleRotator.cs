@@ -1,13 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class SimpleRotator : MonoBehaviour {
+namespace Main.Scripts
+{
+	public class SimpleRotator : MonoBehaviour {
 
-    [SerializeField, Range(1f, 10f)]
-    private float m_Speed = 1.0f;
+		[SerializeField, Range(1f, 10f)]
+		private float _mSpeed = 1.0f;
 
-	void FixedUpdate () {
-        transform.Rotate(new Vector3(1, 0, 0) * m_Speed);
+		private void FixedUpdate () {
+			transform.Rotate(new Vector3(1, 0, 0) * _mSpeed);
+		}  
 	}
 }
