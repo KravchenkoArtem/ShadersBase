@@ -34,16 +34,16 @@
 			{
 				v2f o;
 				o.vertex = UnityObjectToClipPos(v.vertex);
-				//o.color.r = (v.vertex.x + _VertColorRange) / (_VertColorRange /** 2*/);
-				//o.color.g = (v.vertex.z + _VertColorRange) / (_VertColorRange /** 2*/);
+				o.color.r = (v.vertex.x + _VertColorRange) / (_VertColorRange * 2);
+				o.color.g = (v.vertex.z + _VertColorRange) / (_VertColorRange * 2);
 				return o;
 			}
 			
 			fixed4 frag (v2f i) : SV_Target
 			{
-				fixed4 col /*= i.color*/;
-				col.r = (i.vertex.x) / (_VertColorRange * 100);
-				col.g = (i.vertex.y) / (_VertColorRange * 100);
+				fixed4 col = i.color;
+				/*col.r = (i.vertex.x) / (_VertColorRange * 100);
+				col.g = (i.vertex.y) / (_VertColorRange * 100);*/
 				return col;
 			}
 			ENDCG

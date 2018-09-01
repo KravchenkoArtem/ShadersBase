@@ -4,11 +4,11 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: DebugMat
   m_Shader: {fileID: 4800000, guid: 9e7ce946595233541969e5247cab4a8d, type: 3}
-  m_ShaderKeywords: _NORMALMAP
+  m_ShaderKeywords: SWITCH_DEBUG _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -74,6 +74,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _SwitchDbug: 1
     - _SwitchSlider: 0
     - _UVSec: 0
     - _WindQuality: 0
